@@ -7,7 +7,8 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.OPENVIDU_SERVER_URL = 'https://' + window.location.hostname + ':4443';
-        this.OPENVIDU_SERVER_SECRET = "attrix";
+        // this.OPENVIDU_SERVER_URL = "https://185.144.157.89:4443";
+        this.OPENVIDU_SERVER_SECRET = "MY_SECRET";
         this.state = {
             mySessionId: 'SessionA',
             myUserName: 'OpenVidu_User_' + Math.floor(Math.random() * 100),
@@ -41,6 +42,7 @@ class App extends Component {
         this.setState({
             mySessionId: e.target.value,
         });
+        console.log("handleChangeSessionId", e.target.value);
     }
 
     handleChangeUserName(e) {
